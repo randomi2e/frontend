@@ -13,7 +13,7 @@ export default {
     goToAnotherPage() {
       const currentRoute = this.$route.path; // 获取当前路由路径
       console.log(currentRoute)
-      const targetRoute = '/app'; // 要跳转的目标路由路径
+      const targetRoute = '/function'; // 要跳转的目标路由路径
 
       // 如果当前路由不是目标路由，则执行路由切换
       if (currentRoute !== targetRoute) {

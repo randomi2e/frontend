@@ -1,15 +1,21 @@
 <template>
   <div>
     <!-- <router-link to="/function">Go to Function Page</router-link> -->
-    <button @click="goToAnotherPage">Go to Another Page</button>
+    <!-- <button @click="goToAnotherPage">Go to Another Page</button> -->
+    <!-- <Login /> -->
     <router-view :key="$route.fullPath"></router-view>
 
   </div>
 </template>
 
 <script>
+// import Login from './components/Login.vue';
+
 export default {
   name: 'LoginPage',
+  // components: {
+  //   Login
+  // },
   methods: {
     goToAnotherPage() {
       const currentRoute = this.$route.path; // 获取当前路由路径
