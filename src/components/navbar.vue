@@ -13,6 +13,12 @@
   </div>
 </nav>
 
+<script>
+export default {
+  name: 'Navbar'
+}
+</script>
+
 <style>
     .navbar {
     display: flex;

@@ -1,5 +1,6 @@
 <template>
   <div class="about-page">
+    <Navbar />
     <section class="about-intro">
       <h1>About Us</h1>
       <p>Welcome to WanderVoice – your intelligent companion on every journey.</p>
@@ -27,6 +28,8 @@
 </template>
 
 <script>
+import Navbar from './components/navbar.vue';
+
 export default {
   name: 'AboutPage',
   // You can include methods, data, computed properties, etc., as needed.

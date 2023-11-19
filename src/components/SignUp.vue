@@ -22,7 +22,7 @@
         <button type="submit">Create Account</button>
       </form>
       <div class="signup-footer">
-        <p>Already a member? <router-link to="/login">Log In</router-link></p>
+        <p>Already a member? <router-link to="/">Log In</router-link></p>
         <p>This site is protected by reCAPTCHA and the Google <a href="privacy-policy-url">Privacy Policy</a> and <a href="terms-of-service-url">Terms of Service</a> apply.</p>
       </div>
     </div>
