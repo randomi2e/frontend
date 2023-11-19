@@ -1,21 +1,23 @@
 <template>
-  <div class="login-container">
-    <div class="login-header">
+  <div class="login-page">
+    <div class="brand-section">
       <h1>WanderVoice</h1>
       <p>Your innovative in-car voice assistant.</p>
       <p>Experience the future of voice assistants in your car!</p>
     </div>
-    <div class="login-form">
-      <h2>Welcome back</h2>
-      <h3>WanderVoice</h3>
-      <form @submit.prevent="goToAnotherPage">
-        <input type="text" placeholder="User Name" required>
-        <input type="password" placeholder="Password" required minlength="6">
-        <button type="submit">Log in</button>
-      </form>
-      <div class="login-footer">
-        <p>Not a member? <router-link to="/signup">Sign Up</router-link></p>
-        <p>This site is protected by reCAPTCHA and the Google <a href="privacy-policy-url">Privacy Policy</a> and <a href="terms-of-service-url">Terms of Service</a> apply.</p>
+    <div class="login-section">
+      <div class="login-container">
+        <h2>Welcome back</h2>
+        <h3>WanderVoice</h3>
+        <form @submit.prevent="goToAnotherPage">
+          <input type="text" placeholder="User Name" required>
+          <input type="password" placeholder="Password" required minlength="6">
+          <button type="submit">Log in</button>
+        </form>
+        <div class="login-footer">
+          <p>Not a member? <router-link to="/signup">Sign Up</router-link></p>
+          <p>This site is protected by reCAPTCHA and the Google <a href="privacy-policy-url">Privacy Policy</a> and <a href="terms-of-service-url">Terms of Service</a> apply.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -26,6 +28,7 @@ export default {
   name: 'LoginPage',
   methods: {
     goToAnotherPage() {
+      // logic to navigate to another page
       this.$router.push('/function');
     }
   }
@@ -33,35 +36,47 @@ export default {
 </script>
 
 <style scoped>
-.login-container {
+.login-page {
+  display: flex;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport, making the page take up the entire screen */
+}
+
+.brand-section {
+  background-size: cover; /* Cover the entire div with the image */
+  background-position: center; /* Center the image in the div */
+  flex: 1; /* Take up half of the container */
+  color: white;
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f4f4f9; /* Lighter shade for overall background */
 }
 
-.login-header {
-  text-align: left;
-  color: #4a4a4a; /* Dark gray for text */
+.login-section {
+  flex: 1; /* Take up the other half of the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-form {
+.login-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Adjust width as necessary */
 }
 
-.login-form h2, .login-form h3 {
-  color: #333; /* Darker gray for headings */
+.login-container h2, .login-container h3 {
+  color: #333;
+  margin-bottom: 10px;
 }
 
 input[type="text"], input[type="password"] {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -81,15 +96,17 @@ button:hover {
 }
 
 .login-footer {
-  margin-top: 20px;
   font-size: 0.8rem;
+  text-align: center;
+  margin-top: 20px;
 }
 
-a {
+.login-footer a, .router-link {
   color: #e91e63;
+  text-decoration: none;
 }
 
-a:hover {
+.login-footer a:hover, .router-link:hover {
   text-decoration: underline;
 }
 </style>
