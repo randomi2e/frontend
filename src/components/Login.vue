@@ -43,10 +43,9 @@ export default {
 }
 
 .brand-section {
-  background-size: cover; /* Cover the entire div with the image */
+  background-image: url('../assets/logo.png'); /* Cover the entire div with the image */
   background-position: center; /* Center the image in the div */
   flex: 1; /* Take up half of the container */
-  color: white;
   padding: 50px;
   display: flex;
   flex-direction: column;

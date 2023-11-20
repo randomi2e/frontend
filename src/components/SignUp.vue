@@ -32,9 +32,8 @@
 			</div>
 		</div>
 
-		<!-- Sign Up Form Section -->
-		
-			<div id="_bg__frame_ek9"></div>
+
+		<div id="_bg__frame_ek9"></div>
 			<div id="sign_up_to_wandervoice">Sign up to<br/>WanderVoice</div>
 			
 			<!-- Name Field -->
@@ -78,7 +77,7 @@
 			<div id="this_site_is_protected_by_recaptcha_and_the_google_privacy_policy_and_terms_of_service_apply_">
 				This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
 			</div>
-			</div>
+		</div>
 		</div>
     </div>
   </div>
@@ -284,7 +283,7 @@ div { position: absolute; }
 }
 
 #auto_layout_horizontal_ek2 {
-	top: 21px;
+	top: 51px;
 	left: -2px;
 	width: 845px;
 	height: 20px;
@@ -411,7 +410,7 @@ div { position: absolute; }
 }
 
 #name {
-	top: 30px;
+	top: 14px;
 	left: 0px;
 	width: 47.4px;
 	height: 28.4px;
