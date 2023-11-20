@@ -6,14 +6,15 @@ import SignUp from './components/SignUp.vue';
 import Support from './components/Support.vue';
 import About from './components/About.vue';
 
+
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: Login },
+  { path: '/login', component: Login },
   { path: '/signup', component: SignUp },
   { path: '/support', component: Support },
   { path: '/app', component: App },
-  { path: '/about', component: About }
+  { path: '/about', component: About },
 ];
 // eslint-disable-next-line
 const router = new VueRouter({

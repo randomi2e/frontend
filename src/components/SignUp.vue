@@ -1,198 +1,94 @@
 <template>
-	<head>
-		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
-		<title>sign_up_page</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="" >
-		<link rel="StyleSheet" href="sign_up_page.css" />
-		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
-	</head>
-	<body>
-		<div id="content-container" >
-			<div  nameid="Sign Up Page"  id="_bg__sign_up_page"  ></div>
+  <div id="content-container">
+    <div id="_bg__sign_up_page"></div>
+    <div id="frame">
+      <div id="_bg__frame_ek1"></div>
+      <div id="auto_layout_horizontal">
+        <div id="_bg__auto_layout_horizontal_ek1"></div>
+        <div id="wandervoice">WanderVoice</div>
+      </div>
 
-			<div id="frame"  nameid="Frame"  >
-				<div  nameid="Frame"  id="_bg__frame_ek1"  ></div>
+      <div id="auto_layout_vertical">
+        <div id="_bg__auto_layout_vertical_ek1"></div>
+        <div id="ellipse_4"></div>
+        <img src="assets/voice_wave___dark.png" id="voice_wave___dark" />
+        <div id="your_innovative_in_car_voice_assistant__experience_the_future_of_voice_assistants_in_your_car_">
+          Your innovative in-car voice assistant. <br/><br/>Experience the future of voice assistants in your car!
+        </div>
+      </div>
+    </div>
 
-				<div id="auto_layout_horizontal"  nameid="Auto Layout Horizontal"  >
-					<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek1"  ></div>
-					<div  nameid="WanderVoice"  id="wandervoice" >
-						WanderVoice
-					</div>
+    <div id="ellipse_3"></div>
 
-				</div>
+    <div id="frame_ek6">
+      <div id="_bg__frame_ek7"></div>
 
-				<div id="auto_layout_vertical"  nameid="Auto Layout Vertical"  >
-					<div  nameid="Auto Layout Vertical"  id="_bg__auto_layout_vertical_ek1"  ></div>
-					<div  nameid="Ellipse 4"  id="ellipse_4"  ></div>
-					<img src="assets/img/voice_wave___dark.png"  nameid="Voice Wave - Dark"  id="voice_wave___dark" />
-					<div  nameid="Your innovative in-car voice assistant. Experience the future of voice assistants in your car!"  id="your_innovative_in_car_voice_assistant__experience_the_future_of_voice_assistants_in_your_car_" >
-						<br/>Your innovative in-car voice assistant. <br/><br/>Experience the future of voice assistants in your car!
-					</div>
-
-					<div id="frame_ek2"  nameid="Frame"  >
-						<div  nameid="Frame"  id="_bg__frame_ek3"  ></div>
-
-						<div id="frame_ek4"  nameid="Frame"  >
-							<div  nameid="Frame"  id="_bg__frame_ek5"  ></div>
-
-						</div>
-
-					</div>
-
-				</div>
-
+      <!-- Already a member? Section -->
+      <div id="auto_layout_horizontal_ek2">
+		<div id="frame_ek8">
+			<div id="_bg__auto_layout_horizontal_ek3"></div>
+			<div id="already_a_member_">Already a member?
+			<router-link id="_log_in_link" to="/login">Log In</router-link>
 			</div>
-			<div  nameid="Ellipse 3"  id="ellipse_3"  ></div>
-
-			<div id="frame_ek6"  nameid="Frame"  >
-				<div  nameid="Frame"  id="_bg__frame_ek7"  ></div>
-
-				<div id="auto_layout_horizontal_ek2"  nameid="Auto Layout Horizontal"  >
-					<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek3"  ></div>
-					<div  nameid="Already a member?"  id="already_a_member_" >
-						Already a member? 
-					</div>
-					<a id="_log_in_link" href="log_in_page.html" >
-					<div  nameid="Log In"  id="_log_in" >
-						 Log In
-					</div>
-					</a>
-
-				</div>
-
-				<div id="frame_ek8"  nameid="Frame"  >
-					<div  nameid="Frame"  id="_bg__frame_ek9"  ></div>
-					<div  nameid="Sign up to WanderVoice"  id="sign_up_to_wandervoice" >
-						Sign up to<br/><br/>WanderVoice
-					</div>
-
-					<div id="frame_ek10"  nameid="Frame"  >
-						<div  nameid="Frame"  id="_bg__frame_ek11"  ></div>
-
-						<div id="auto_layout_horizontal_ek4"  nameid="Auto Layout Horizontal"  >
-							<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek5"  ></div>
-
-							<div id="auto_layout_vertical_ek2"  nameid="Auto Layout Vertical"  >
-								<div  nameid="Auto Layout Vertical"  id="_bg__auto_layout_vertical_ek3"  ></div>
-								<div  nameid="Name"  id="name" >
-									Name
-								</div>
-
-								<div id="frame_ek12"  nameid="Frame"  >
-									<div  nameid="Frame"  id="_bg__frame_ek13"  ></div>
-
-								</div>
-
-							</div>
-
-							<div id="auto_layout_vertical_ek4"  nameid="Auto Layout Vertical"  >
-								<div  nameid="Auto Layout Vertical"  id="_bg__auto_layout_vertical_ek5"  ></div>
-								<div  nameid="Username"  id="username" >
-									Username
-								</div>
-
-								<div id="frame_ek14"  nameid="Frame"  >
-									<div  nameid="Frame"  id="_bg__frame_ek15"  ></div>
-
-								</div>
-
-							</div>
-
-						</div>
-
-						<div id="auto_layout_vertical_ek6"  nameid="Auto Layout Vertical"  >
-							<div  nameid="Auto Layout Vertical"  id="_bg__auto_layout_vertical_ek7"  ></div>
-							<div  nameid="Email"  id="email" >
-								Email
-							</div>
-
-							<div id="frame_ek16"  nameid="Frame"  >
-								<div  nameid="Frame"  id="_bg__frame_ek17"  ></div>
-
-								<div id="auto_layout_horizontal_ek6"  nameid="Auto Layout Horizontal"  >
-									<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek7"  ></div>
-
-									<div id="auto_layout_horizontal_ek8"  nameid="Auto Layout Horizontal"  >
-										<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek9"  ></div>
-										<div  nameid="Enter Email"  id="enter_email" >
-											Enter Email
-										</div>
-
-									</div>
-
-								</div>
-
-							</div>
-
-						</div>
-
-						<div id="auto_layout_vertical_ek8"  nameid="Auto Layout Vertical"  >
-							<div  nameid="Auto Layout Vertical"  id="_bg__auto_layout_vertical_ek9"  ></div>
-							<div  nameid="Password"  id="password" >
-								Password
-							</div>
-
-							<div id="auto_layout_horizontal_ek10"  nameid="Auto Layout Horizontal"  >
-								<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek11"  ></div>
-
-								<div id="auto_layout_horizontal_ek12"  nameid="Auto Layout Horizontal"  >
-									<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek13"  ></div>
-									<div  nameid="6+ characters"  id="_6__characters" >
-										6+ characters
-									</div>
-
-								</div>
-
-							</div>
-
-						</div>
-
-						<div id="frame_ek18"  nameid="Frame"  >
-							<div  nameid="Frame"  id="_bg__frame_ek19"  ></div>
-							<div  nameid="Rectangle"  id="rectangle"  ></div>
-
-							<div id="auto_layout_horizontal_ek14"  nameid="Auto Layout Horizontal"  >
-								<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek15"  ></div>
-								<div  nameid="Creating an account means youre okay with our Terms of Service, Privacy Policy, and our default Notification Settings."  id="creating_an_account_means_you_re_okay_with_our_terms_of_service__privacy_policy__and_our_default_notification_settings_" >
-									Creating an account means you're okay with our Terms of Service, Privacy Policy, and our default Notification Settings.
-								</div>
-
-							</div>
-
-						</div>
-
-						<a id="auto_layout_horizontal_ek16_cls_a"  _par="" href="log_in_page.html" >
-							<div  nameid="Auto Layout Horizontal"  id="_bg___auto_layout_horizontal_ek17"  ></div>
-							<div  nameid="Create Account"  id="create_account" >
-								Create Account
-							</div>
-
-						</a>
-
-						<div id="auto_layout_horizontal_ek18"  nameid="Auto Layout Horizontal"  >
-							<div  nameid="Auto Layout Horizontal"  id="_bg__auto_layout_horizontal_ek19"  ></div>
-							<div  nameid="This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply."  id="this_site_is_protected_by_recaptcha_and_the_google_privacy_policy_and_terms_of_service_apply_" >
-								This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
 		</div>
-	</body>
-</html>
+
+		<!-- Sign Up Form Section -->
+		
+			<div id="_bg__frame_ek9"></div>
+			<div id="sign_up_to_wandervoice">Sign up to<br/>WanderVoice</div>
+			
+			<!-- Name Field -->
+			<div id="auto_layout_vertical_ek2">
+			<div id="name">Name</div>
+			<input type="text" id="name_input" placeholder="Enter your name">
+			</div>
+			
+			<!-- Username Field -->
+			<div id="auto_layout_vertical_ek4">
+			<div id="username">Username</div>
+			<input type="text" id="username_input" placeholder="Choose a username">
+			</div>
+			
+			<!-- Email Field -->
+			<div id="auto_layout_vertical_ek6">
+			<div id="email">Email</div>
+			<input type="email" id="email_input" placeholder="Enter your email">
+			</div>
+			
+			<!-- Password Field -->
+			<div id="auto_layout_vertical_ek8">
+			<div id="password">Password</div>
+			<input type="password" id="password_input" placeholder="Create a password">
+			</div>
+			
+			<!-- Terms and Conditions Checkbox -->
+			<div id="frame_ek18">
+			<input type="checkbox" id="terms_checkbox">
+			<label for="terms_checkbox" id="creating_an_account_means_you_re_okay_with_our_terms_of_service__privacy_policy__and_our_default_notification_settings_">
+				Creating an account means you're okay with our Terms of Service, Privacy Policy, and our default Notification Settings.
+			</label>
+			</div>
+			
+			<!-- Create Account Button -->
+			<router-link id="_log_in_link" to="/login">Create Account</router-link>
+
+			<!-- reCAPTCHA Notice -->
+			<div id="auto_layout_horizontal_ek18">
+			<div id="_bg__auto_layout_horizontal_ek19"></div>
+			<div id="this_site_is_protected_by_recaptcha_and_the_google_privacy_policy_and_terms_of_service_apply_">
+				This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+			</div>
+			</div>
+		</div>
+    </div>
+  </div>
 </template>
+
 
 <script>
 export default {
   name: 'SignUp',
-  // You can add data, computed properties, methods, etc. here later on
+  
 };
 </script>
 
@@ -388,7 +284,7 @@ div { position: absolute; }
 }
 
 #auto_layout_horizontal_ek2 {
-	top: 51px;
+	top: 21px;
 	left: -2px;
 	width: 845px;
 	height: 20px;
@@ -432,12 +328,7 @@ div { position: absolute; }
 	color:#4F3CC9;
 }
 
-#frame_ek8 {
-	top: 122.5px;
-	left: 169px;
-	width: 536px;
-	height: 747px;
-}
+
 
 #_bg__frame_ek9 {
 	top: 0px;
@@ -509,9 +400,18 @@ div { position: absolute; }
 	background:#;
 }
 
+#frame_ek8 {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  height: 747px;
+  margin-left: 1px;
+  position: relative;
+  width: 536px;
+}
 
 #name {
-	top: 14px;
+	top: 30px;
 	left: 0px;
 	width: 47.4px;
 	height: 28.4px;
