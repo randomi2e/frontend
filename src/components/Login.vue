@@ -73,7 +73,7 @@ export default {
 }
 
 input[type="text"], input[type="password"] {
-  width: 100%;
+  width: 92%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;

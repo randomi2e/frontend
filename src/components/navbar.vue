@@ -1,17 +1,19 @@
-<nav class="navbar">
-  <div class="navbar-brand">
-    <router-link to="/">
-      <img src="path-to-logo.png" alt="WanderVoice Logo" class="logo"/>
-      WanderVoice
-    </router-link>
-  </div>
-  <div class="navbar-menu">
-    <router-link to="/premium" class="navbar-item">Premium</router-link>
-    <router-link to="/support" class="navbar-item">Support</router-link>
-    <router-link to="/signup" class="navbar-item">Sign up</router-link>
-    <router-link to="/login" class="navbar-item">Log in</router-link>
-  </div>
-</nav>
+<template>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <router-link to="/">
+        <img src="../assets/voice-wave.png" alt="WanderVoice Logo" class="logo"/>
+        WanderVoice
+      </router-link>
+    </div>
+    <div class="navbar-menu">
+      <router-link to="/premium" class="navbar-item">Premium</router-link>
+      <router-link to="/support" class="navbar-item">Support</router-link>
+      <router-link to="/signup" class="navbar-item">Sign up</router-link>
+      <router-link to="/login" class="navbar-item">Log in</router-link>
+    </div>
+  </nav>
+</template>
 
 <script>
 export default {
@@ -26,7 +28,8 @@ export default {
     align-items: center;
     background-color: #000; /* Assuming a black background from the image */
     color: #fff; /* White text color */
-    padding: 10px 20px; /* Adjust the padding as needed */
+    padding: 10px 20px; 
+    height:50px
     }
 
     .navbar-brand {
@@ -47,6 +50,7 @@ export default {
     color: #fff; /* White text color */
     text-decoration: none; /* Removes underline from links */
     margin-left: 20px; /* Space between menu items */
+    font-family: 'Calibri', Arial, sans-serif;  font-weight:bold;
     }
 
     .navbar-item:hover {
