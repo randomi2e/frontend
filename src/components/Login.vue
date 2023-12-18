@@ -1,22 +1,21 @@
 <template>
   <div class="login-page">
     <div class="brand-section">
-      <h1>WanderVoice</h1>
-      <p>Your innovative in-car voice assistant.</p>
-      <p>Experience the future of voice assistants in your car!</p>
+      <h1 style="font-family: 'Calibri', Arial, sans-serif;  font-weight:bold;font-size: 60px;">WanderVoice</h1>
+      <p style="font-family: 'Calibri', Arial, sans-serif; font-size: 24px;">Your innovative in-car voice assistant.</p>
+      <p style="font-family: 'Calibri', Arial, sans-serif; font-size: 24px;">Experience the future of voice assistants in your car!</p>
     </div>
     <div class="login-section">
       <div class="login-container">
-        <h2>Welcome back</h2>
-        <h3>WanderVoice</h3>
+        <h1 style="font-family: 'Calibri', Arial, sans-serif;  font-weight:bold;font-size: 26px;">WanderVoice</h1>
+        <h2 style="font-family: 'Calibri', Arial, sans-serif;  font-weight:bold;font-size: 16px;">Log in</h2>
         <form @submit.prevent="goToAnotherPage">
-          <input type="text" placeholder="User Name" required>
-          <input type="password" placeholder="Password" required minlength="6">
-          <button type="submit">Log in</button>
+          <input type="text" style="font-family: 'Calibri', Arial, sans-serif;" placeholder="User Name" required>
+          <input type="password"  style="font-family: 'Calibri', Arial, sans-serif;" placeholder="Password" required minlength="6">
+          <button type="submit" style="font-family: 'Calibri', Arial, sans-serif;">Log in</button>
         </form>
         <div class="login-footer">
-          <p>Not a member? <router-link to="/signup">Sign Up</router-link></p>
-          <p>This site is protected by reCAPTCHA and the Google <a href="privacy-policy-url">Privacy Policy</a> and <a href="terms-of-service-url">Terms of Service</a> apply.</p>
+          <p style="font-family: 'Calibri', Arial, sans-serif;">Not a member? <router-link to="/signup">Sign Up</router-link></p>
         </div>
       </div>
     </div>
@@ -28,9 +27,9 @@ export default {
   name: 'LoginPage',
   methods: {
     goToAnotherPage() {
-      // logic to navigate to another page
-      this.$router.push('/function');
+      this.$router.push('/functions');
     }
+
   }
 }
 </script>

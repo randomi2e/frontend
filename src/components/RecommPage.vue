@@ -1,12 +1,13 @@
 <template>
   <div>
     <Navbar/>
-    <div style="margin-top:0px;background-image: url(../assets/logo.png);background-size: 100% 100%; background-repeat: no-repeat;">
-      <div style="height: 10px"></div>
-
+    <div style="margin-top:-20px;background-image: url(../assets/logo.png);background-size: 100% 100%; min-height: 800px; background-repeat: no-repeat;">
+    <div class="title"> Recommendation</div>
+    <div class="intro">Discover, Stay, and Play just for you:</div>
+    <div class="intro">    Smart suggestions for hotels, sports, and music from Top Websites</div>
     <div style=" background-color: rgba(0, 0, 0, 0.4); background-size: contain; border-radius: 10px; width: 70%;margin-left: auto;margin-right: auto; margin-top: 20px; /* 圆角边框 */
 ">
-    <div style="height: 20px"></div>
+    <div style="height: 10px"></div>
     <div class="input-container">
       <div>
         <!-- 按钮 -->
@@ -26,23 +27,23 @@
       </div>
         <!-- 波形绘制区域 -->
         <div class="wave">
-          <div style="  background-color: rgb(0,0,0,0.2); border-radius: 10px;height: 150px; width: 570px; margin-left: auto;margin-right: auto;margin-bottom: 10px;" ref="recwave"></div>
+          <div style="  background-color: rgb(0,0,0,0.2); border-radius: 10px;height: 130px; width: 570px; margin-left: auto;margin-right: auto;margin-bottom: 10px;" ref="recwave"></div>
         </div>
       </div>
 
   </div>
+  <div v-show="loading" class="load" >Voice is wandering...</div>
   <div style="display: flex; justify-content: center;  margin-top:30px;">
-  <div class="return_text">
-  <div style="  font-family: 'Calibri', Arial, sans-serif;  font-weight:bold;margin: 15px; font-size:20px; background-color: #ffffff;" id="text"> </div>
+  <div class="return_text" v-show="get_text">
+  <div style="  font-family: 'Calibri', Arial, sans-serif;  font-weight:bold;margin: 15px; font-size:20px; background-color: #ffffff;" id="text" > </div>
   </div>
   <button style="width: 80px; height:80px;border-width: 0; background-color: rgba(126, 126, 126, 0);" v-if="get_audio" @click="playAudio">
-    <img style="max-width: 100%; max-height: 100%;" src="../assets/play.png" />
+    <img style="margin-left:-10px;max-width: 100%; max-height: 100%;" src="../assets/play.png" />
   </button>
 </div>
 <div style="height: 20px"></div>
 
 </div>
-<div style="height: 20px"></div>
 
 </div>
 </div>
@@ -71,8 +72,8 @@ let recBlob= null;
 import AWS from 'aws-sdk';
 
 AWS.config.update({
-  accessKeyId: 'AKIAR62W5B6IHOF3NGPP',
-  secretAccessKey: 'TUlw9UW2robbSGpDFovZVuD+iouQOvboflDvQt5q',
+  accessKeyId: 'YOUR_ACCESS_KEY_ID',
+  secretAccessKey: 'YOUR_SECRET_ACCESS_KEY',
   region: 'us-east-1'
 });
 
@@ -84,23 +85,23 @@ export default {
         inputText: '' ,
         timestamp: '',
         get_audio: false,
-        wave: null
-
+        get_text: false,
+        wave: null,
+        intervalAudio: null,
+        intervalText: null,
+        loading: false
       };
     },
     components: {
         Navbar,
-        // AudioRecorder
     },
     mounted() {
-      this.intervalAudio = setInterval(this.checkAudioS3Updates, 1000);
-      this.intervalText = setInterval(this.checkTextS3Updates, 1000);
-      this.wave = Recorder.WaveView({ elem: this.$refs.recwave });
-      this.recOpen()
+      // this.recOpen()
     },
 
-    beforeUnmount() {
-    // 清除定时器
+    deactivated() {
+      this.rec.close();
+      this.rec = null;
       clearInterval(this.interval);
     },
     methods: {
@@ -171,7 +172,7 @@ export default {
           },
           (err) => {
             console.error('结束录音出错：' + err);
-            // this.rec.close(); //关闭录音，释放录音资源，当然可以不释放，后面可以连续调用start
+            this.rec.close(); //关闭录音，释放录音资源，当然可以不释放，后面可以连续调用start
             this.rec = null;
           },
         );
@@ -209,7 +210,13 @@ export default {
             console.log('上传成功:', data.Location);
           }
         });
+        this.loading = true
+        this.get_text = false
+        this.get_audio = false
+        this.intervalAudio = setInterval(this.checkAudioS3Updates, 2000);
+        this.intervalText = setInterval(this.checkTextS3Updates, 2000);
       },
+      
       recPlay() {
       const localUrl = URL.createObjectURL(recBlob);
       const audio = document.createElement('audio');
@@ -251,17 +258,23 @@ export default {
           console.log('上传成功:', data.Location);
         }
       });
-
+      this.inputText = ''
+      this.loading = true
+      this.get_text = false
+      this.get_audio = false
+      this.intervalAudio = setInterval(this.checkAudioS3Updates, 2000);
+      this.intervalText = setInterval(this.checkTextS3Updates, 2000);
     },
     checkAudioS3Updates() {
-      // const file_name = '1_'+this.timestamp +'.mp3'
-      const file_name = 'file.mp3'
+      const file_name = '1_'+this.timestamp +'.mp3'
+      // const file_name = 'file.mp3'
       axios.get('https://polly-voice-store.s3.amazonaws.com/'+file_name, {responseType: 'blob'})
         .then(response => {
           const url = URL.createObjectURL(response.data);
           const audio = new Audio(url);
           this.audio = audio
           this.get_audio = true
+          this.loading = false
           clearInterval(this.intervalAudio);
 
         })
@@ -270,13 +283,15 @@ export default {
         });
     },
     checkTextS3Updates() {
-      // const file_name = '1_'+this.timestamp +'.txt'
-      const file_name = "file.txt"
+      const file_name = '1_'+this.timestamp +'.txt'
+      // const file_name = "file.txt"
       axios.get('https://output-text-store.s3.amazonaws.com/' + file_name, {responseType: 'blob'})
         .then(response => {
           console.log(3214134134)
           response.data.text().then(text => {
           console.log("文件内容:", text);
+          this.get_text = true
+          this.loading = false
           document.getElementById("text").innerText = text;
           clearInterval(this.intervalText);
         });
@@ -292,8 +307,35 @@ export default {
 </script>
 
 <style>
+.load {
+  margin-top: 30px;
+  font-family: 'Calibri', Arial, sans-serif;  
+  font-weight:bold;
+  font-size: 46px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 10px;
+}
+.title {
+  font-family: 'Calibri', Arial, sans-serif;  
+  font-weight:bold;
+  font-size: 48px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 10px;
+}
+.intro {
+  font-family: 'Calibri', Arial, sans-serif;  
+  /* font-weight:bold; */
+  font-size: 26px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 10px;
+}
+
 .input-container {
-  background-color: rgb(214, 150, 216); 
+  /* background-color: rgb(182, 150, 216, 0.9);  */
+  background-color: rgba(255, 255, 255, 0.4); 
   width:80%;
   margin-left: auto;
   margin-right: auto;
@@ -349,7 +391,7 @@ export default {
   border: none;
   margin-right: 5px;
   cursor: pointer;
-  background-color: rgb(214, 150, 216);
+  background-color: rgb(182, 150, 216, 0.2);
 
 }
 
@@ -360,7 +402,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(214, 150, 216);
+  background-color: rgb(182, 150, 216, 0.2);
   border: none;
   cursor: pointer;
   margin-left: 3px;
@@ -383,7 +425,7 @@ export default {
   border-style: solid;
   border-radius: 8px;
   border-color: #000000;
-  border-width: 2px; 
+  border-width: 3px; 
   height:200%;
   width: 75%;
   background-color: #ffffff;

@@ -7,6 +7,7 @@ import Support from './components/Support.vue';
 import About from './components/About.vue';
 import TourGuide from './components/TourGuide.vue'
 import RecommPage from './components/RecommPage.vue'
+import FunctionsPage from './components/FunctionsPage.vue'
 // import AudioRecorder from "vue-audio-recorder";
 
 
@@ -20,6 +21,7 @@ const routes = [
   { path: '/support', component: Support },
   { path: '/app', component: App },
   { path: '/about', component: About },
+  { path: '/functions', component: FunctionsPage },
   { path: '/tourguide', component: TourGuide },
   { path: '/recomm', component: RecommPage },
   

@@ -1,16 +1,15 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <router-link to="/">
+      <router-link to="/" style="display: flex;">
         <img src="../assets/voice-wave.png" alt="WanderVoice Logo" class="logo"/>
-        WanderVoice
+        <div class="navbar-item" style="font-size: 24px;">WanderVoice</div>
       </router-link>
     </div>
     <div class="navbar-menu">
-      <router-link to="/premium" class="navbar-item">Premium</router-link>
+      <router-link to="/functions" class="navbar-item">Functions</router-link>
       <router-link to="/support" class="navbar-item">Support</router-link>
-      <router-link to="/signup" class="navbar-item">Sign up</router-link>
-      <router-link to="/login" class="navbar-item">Log in</router-link>
+      <router-link to="/login" class="navbar-item">Log out</router-link>
     </div>
   </nav>
 </template>
@@ -51,6 +50,9 @@ export default {
     text-decoration: none; /* Removes underline from links */
     margin-left: 20px; /* Space between menu items */
     font-family: 'Calibri', Arial, sans-serif;  font-weight:bold;
+    align-items: center;
+    display: flex;
+
     }
 
     .navbar-item:hover {
